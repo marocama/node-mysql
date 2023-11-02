@@ -8,7 +8,7 @@ services:
     tty: true 
     entrypoint: wait-for db:3306 -t 40 -- node index.js
     volumes:
-      - ./node:/usr/src/app
+      - ./node:/usr/app
     networks:
       - node-network
     depends_on:
