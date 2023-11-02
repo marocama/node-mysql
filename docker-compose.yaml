@@ -6,9 +6,9 @@ services:
       context: node
     container_name: app
     tty: true 
-    entrypoint: wait-for db:3306 -t 40 -- node index.js
+    entrypoint: wait-for db:3306 -t 40 -- ./start.sh
     volumes:
-      - ./node:/usr/app
+      - ./node:/home/node/app
     networks:
       - node-network
     depends_on:
